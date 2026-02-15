@@ -1,11 +1,24 @@
-document.querySelector("button").addEventListener("click", function() {
+window.addEventListener("DOMContentLoaded", function () {
 
-    const art = document.querySelector('input[name="art"]:checked');
+    const button = document.querySelector("button");
 
-    if (!art) {
-        alert("Bitte wählen Sie eine Übergabeart!");
-        return;
-    }
+    button.addEventListener("click", function () {
 
-    alert("Registrierung erfolgreich! Vielen Dank für Ihre Spende.");
+        const radios = document.querySelectorAll('input[type="radio"]');
+        let selected = false;
+
+        radios.forEach(function(radio) {
+            if (radio.checked) {
+                selected = true;
+            }
+        });
+
+        if (!selected) {
+            alert("Bitte wählen Sie eine Übergabeart!");
+            return;
+        }
+
+        alert("Registrierung erfolgreich! Vielen Dank für Ihre Spende.");
+    });
+
 });
