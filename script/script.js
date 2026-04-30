@@ -1,24 +1,26 @@
-window.addEventListener("DOMContentLoaded", function () {
+function submitForm() {
 
-    const button = document.querySelector("button");
+  let type = document.getElementById("type").value;
+  let plz = document.getElementById("plz").value;
+  let address = document.getElementById("address").value;
+  let cloth = document.getElementById("cloth").value;
+  let region = document.getElementById("region").value;
 
-    button.addEventListener("click", function () {
+  // اگر Abholung بود → PLZ چک کن
+  if (type === "abholung") {
+    if (plz.substring(0,2) !== "12") {
+      alert("PLZ zu weit entfernt!");
+      return;
+    }
+  }
 
-        const radios = document.querySelectorAll('input[type="radio"]');
-        let selected = false;
-
-        radios.forEach(function(radio) {
-            if (radio.checked) {
-                selected = true;
-            }
-        });
-
-        if (!selected) {
-            alert("Bitte wählen Sie eine Übergabeart!");
-            return;
-        }
-
-        alert("Registrierung erfolgreich! Vielen Dank für Ihre Spende.");
-    });
-
-});
+  // ❗ مهم: صفحه نهایی (Summary)
+  document.body.innerHTML = `
+    <h2>Registrierung erfolgreich!</h2>
+    <p><b>Art:</b> ${type}</p>
+    <p><b>Adresse:</b> ${address}</p>
+    <p><b>PLZ:</b> ${plz}</p>
+    <p><b>Kleidung:</b> ${cloth}</p>
+    <p><b>Krisengebiet:</b> ${region}</p>
+  `;
+}
