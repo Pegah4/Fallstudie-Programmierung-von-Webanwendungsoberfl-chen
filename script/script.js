@@ -24,3 +24,14 @@ function submitForm() {
     <p><b>Krisengebiet:</b> ${region}</p>
   `;
 }
+document.getElementById("type").addEventListener("change", function () {
+  let type = document.getElementById("type").value;
+
+  if (type === "abholung") {
+    document.getElementById("addressBox").style.display = "block";
+    document.getElementById("plzBox").style.display = "block";
+  } else {
+    document.getElementById("addressBox").style.display = "none";
+    document.getElementById("plzBox").style.display = "none";
+  }
+});
