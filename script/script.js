@@ -13,7 +13,6 @@ function submitForm() {
     }
   }
 
-  // ❗ مهم: صفحه نهایی (Summary)
   document.body.innerHTML = `
     <h2>Registrierung erfolgreich!</h2>
     <p><b>Art:</b> ${type}</p>
