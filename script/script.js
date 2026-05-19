@@ -9,7 +9,10 @@ function submitForm() {
    alert("Bitte alle Felder ausfüllen!");
    return;
 }
-
+if(!isNaN(cloth)) {
+   alert("Kleidung darf nicht nur Zahlen enthalten!");
+   return;
+}
   if (type === "abholung") {
     if (plz.substring(0,2) !== "12") {
       alert("PLZ zu weit entfernt!");
