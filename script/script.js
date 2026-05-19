@@ -5,6 +5,10 @@ function submitForm() {
   let address = document.getElementById("address").value;
   let cloth = document.getElementById("cloth").value;
   let region = document.getElementById("region").value;
+  if(cloth === "" || region === "") {
+   alert("Bitte alle Felder ausfüllen!");
+   return;
+}
 
   if (type === "abholung") {
     if (plz.substring(0,2) !== "12") {
