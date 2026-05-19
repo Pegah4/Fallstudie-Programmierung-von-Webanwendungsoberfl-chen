@@ -6,7 +6,6 @@ function submitForm() {
   let cloth = document.getElementById("cloth").value;
   let region = document.getElementById("region").value;
 
-  // اگر Abholung بود → PLZ چک کن
   if (type === "abholung") {
     if (plz.substring(0,2) !== "12") {
       alert("PLZ zu weit entfernt!");
