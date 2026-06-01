@@ -19,7 +19,9 @@ if(!isNaN(cloth)) {
       return;
     }
   }
-
+const now = new Date();
+const datum = now.toLocaleDateString("de-DE");
+const uhrzeit = now.toLocaleTimeString("de-DE");
   document.body.innerHTML = `
     <h2>Registrierung erfolgreich!</h2>
     <p><b>Art:</b> ${type}</p>
@@ -27,6 +29,8 @@ if(!isNaN(cloth)) {
     <p><b>PLZ:</b> ${plz}</p>
     <p><b>Kleidung:</b> ${cloth}</p>
     <p><b>Krisengebiet:</b> ${region}</p>
+    <p><b>Datum:</b> ${datum}</p>
+    <p><b>Uhrzeit:</b> ${uhrzeit}</p>
   `;
 }
 document.getElementById("type").addEventListener("change", function () {
